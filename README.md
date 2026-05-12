@@ -3,7 +3,7 @@
 Blooming Oasis is a polished, professional 4-page web application designed for a premium indoor plant store. Built with a focus on elegant design and user interactivity, it provides a seamless experience for plant enthusiasts to discover, learn about, and shop for their perfect green companions.
 
 ## 🚀 Live Preview
-You can view the live application here: [Blooming Oasis Live](https://ais-pre-s2yixnxwrnuagcqo5etehq-753964473130.asia-southeast1.run.app)
+You can view the live application here: [Blooming Oasis Live](https://bloomingoasis.netlify.app/)
 
 ## ✨ Key Features
 
