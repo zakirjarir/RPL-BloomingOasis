@@ -46,10 +46,9 @@ You can view the live application here: [Blooming Oasis Live](https://ais-pre-s2
 ├── about.html          # About Us page
 ├── contact.html        # Contact page
 ├── src/
-│   ├── main.js         # Core logic (Quiz, Chat, Date, Scroll)
-│   └── style.css       # Custom premium styling
-├── metadata.json       # Applet metadata
-└── package.json        # Project dependencies
+    ├── main.js         # Core logic (Quiz, Chat, Date, Scroll)
+    └── style.css       # Custom premium styling
+
 ```
 
 ## 📖 How to Run
