@@ -17,6 +17,7 @@ body {
     line-height: 1.6;
 }
 
+
 h1, h2, h3, h4, .navbar-brand, .display-1, .display-3 {
     font-family: 'Playfair Display', serif;
 }
@@ -151,4 +152,13 @@ footer {
 
 footer .nav-link:hover {
     color: var(--accent-green) !important;
+}
+
+
+.navbar {
+    z-index: 1050;
+}
+
+main {
+    padding-top: 40px;
 }
