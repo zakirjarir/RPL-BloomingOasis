@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Oasis - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🌿 Blooming Oasis</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center d-flex align-items-center" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
+        <div class="container animate-up">
+            <span class="text-uppercase tracking-widest small mb-3 d-block fw-bold" style="letter-spacing: 3px;">Since 2024</span>
+            <h1 class="display-1 fw-bold mb-4">Cultivate Your <br><span class="font-italic" style="color: var(--accent-green);">Indoor</span> Sanctuary</h1>
+            <p class="lead mb-5 mx-auto" style="max-width: 600px;">Elevate your space with our curated collection of premium houseplants and expert care guides.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#quiz" class="btn btn-light btn-lg rounded-pill px-5">Matchmaker Quiz</a>
+                <a href="product.html" class="btn btn-outline-light btn-lg rounded-pill px-5">Shop Plants</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <!-- Plant Matchmaker Quiz -->
+        <section id="quiz" class="mb-5 p-5 rounded-4 bg-white border-0 shadow-lg position-relative overflow-hidden">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-success opacity-05 pointer-events-none"></div>
+            <div class="row align-items-center position-relative">
+                <div class="col-lg-6">
+                    <h2 class="display-5 mb-4">Find Your Perfect <br>Green Companion</h2>
+                    <p class="text-muted mb-4 text-justify">Not sure which plant is right for you? Our Matchmaker Quiz takes the guesswork out of plant parenting by analyzing your space and lifestyle.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div id="quiz-container" class="bg-light p-4 rounded-4 shadow-sm border">
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small text-uppercase">Sunlight Availability</label>
+                            <select id="sunlight" class="form-select border-0 shadow-sm">
+                                <option value="direct">Direct Sunlight (South Facing)</option>
+                                <option value="indirect">Indirect Light (Filtered)</option>
+                                <option value="low">Low Light (Away from windows)</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small text-uppercase">Experience Level</label>
+                            <select id="care" class="form-select border-0 shadow-sm">
+                                <option value="beginner">Beginner (Hardy & resilient)</option>
+                                <option value="moderate">Intermediate (Enjoys attention)</option>
+                                <option value="expert">Expert (Plant aficionado)</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="pet-friendly">
+                                <label class="form-check-label fw-bold small text-uppercase ms-2" for="pet-friendly">
+                                    Pet-Friendly Selection Required?
+                                </label>
+                            </div>
+                        </div>
+                        <button id="find-plant-btn" class="btn btn-success w-100 py-3 shadow-sm rounded-pill">View My Recommendation</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-result" class="mt-5 pt-5 border-top d-none animate-up">
+                <div class="text-center mb-5">
+                    <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill mb-3">Our Choice For You</span>
+                    <h3 id="result-name" class="display-6"></h3>
+                </div>
+                <div class="card border-0 shadow-lg mx-auto overflow-hidden rounded-4" style="max-width: 900px;">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img id="result-img" src="" class="img-fluid h-100" style="object-fit: cover;" alt="Recommended Plant">
+                        </div>
+                        <div class="col-md-7 d-flex align-items-center">
+                            <div class="card-body p-5">
+                                <p id="result-desc" class="lead text-muted mb-4"></p>
+                                <div class="d-flex gap-3">
+                                    <a href="product.html" class="btn btn-success rounded-pill px-4">Buy This Plant</a>
+                                    <button class="btn btn-outline-secondary rounded-pill px-4" onclick="location.reload()">Reset Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plant Photo Collage -->
+        <section class="mb-5 py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Nature's Gallery</h2>
+                <div class="mx-auto bg-success rounded-pill mt-2" style="width: 80px; height: 4px;"></div>
+                <p class="text-muted mt-3">Explore the textures and patterns of our vibrant library.</p>
+            </div>
+            <div class="row g-3" id="photo-collage">
+                <div class="col-md-4 collage-item-large">
+                    <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&w=600&q=80" alt="Plant 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=600&q=80" alt="Plant 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=600&q=80" alt="Plant 3">
+                </div>
+                <div class="col-md-8">
+                    <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=800&q=80" style="height: 300px; object-fit: cover;" alt="Plant 4">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&q=80" alt="Plant 5">
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Houseplants -->
+        <section class="mb-5 py-5">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <h2 class="display-5 fw-bold mb-0">Trending Now</h2>
+                    <p class="text-muted small text-uppercase fw-bold mt-2">Our most loved greenery</p>
+                </div>
+                <a href="product.html" class="text-success fw-bold text-decoration-none">View All Products →</a>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 hover-shadow border-0 shadow-sm overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Monstera">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title h5">Monstera Deliciosa</h4>
+                            <p class="card-text text-muted small mb-3">The "Swiss Cheese Plant" icon.</p>
+                            <span class="h5 text-success">$45.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 hover-shadow border-0 shadow-sm overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Snake Plant">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title h5">Snake Plant</h4>
+                            <p class="card-text text-muted small mb-3">Tough, resilient, and elegant.</p>
+                            <span class="h5 text-success">$32.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 hover-shadow border-0 shadow-sm overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1520412099551-6296b0bb5e0b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Fiddle Leaf Fig">
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title h5">Fiddle Leaf Fig</h4>
+                            <p class="card-text text-muted small mb-3">The ultimate designer favorite.</p>
+                            <span class="h5 text-success">$58.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curated Collections -->
+        <section class="mb-5 py-5 bg-white border rounded-4 shadow-sm">
+            <div class="row align-items-center px-lg-5">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h2 class="display-6 fw-bold">Curated <br>Collections</h2>
+                    <p class="text-muted">Hand-picked sets tailored to your specific garden needs and home environment.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="p-4 rounded-4 bg-light text-center h-100 border transition-transform hover-shadow">
+                                <div class="display-6 mb-3 text-success">🌱</div>
+                                <h5 class="fw-bold">Beginners</h5>
+                                <p class="small text-muted mb-0">Easy-to-care staples for new plant parents.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 rounded-4 bg-light text-center h-100 border transition-transform hover-shadow">
+                                <div class="display-6 mb-3 text-success">🌬️</div>
+                                <h5 class="fw-bold">Air-Purifiers</h5>
+                                <p class="small text-muted mb-0">Naturally filter toxins from your air.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 rounded-4 bg-light text-center h-100 border transition-transform hover-shadow">
+                                <div class="display-6 mb-3 text-success">🐾</div>
+                                <h5 class="fw-bold">Pet-Safe</h5>
+                                <p class="small text-muted mb-0">Non-toxic greens safe for your companions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plant Care Guides & About Us Intro -->
+        <div class="row g-5 mb-5 py-5 align-items-center">
+            <div class="col-md-6 order-2 order-md-1">
+                <div class="bg-success text-white p-5 rounded-4 shadow-lg">
+                    <h3 class="display-6 mb-4">Plant Care Academy</h3>
+                    <div class="d-grid gap-3">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none border-bottom border-white border-opacity-10 pb-3 hover-opacity">
+                            <span class="h4 mb-0 me-3">01.</span>
+                            <div>
+                                <h5 class="mb-0">The Watering Bible</h5>
+                                <p class="small text-white-50 mb-0">Master the art of moisture balance.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none border-bottom border-white border-opacity-10 pb-3 hover-opacity">
+                            <span class="h4 mb-0 me-3">02.</span>
+                            <div>
+                                <h5 class="mb-0">Lighting Demystified</h5>
+                                <p class="small text-white-50 mb-0">Finding the sweet spot for solar lovers.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none pb-0 hover-opacity">
+                            <span class="h4 mb-0 me-3">03.</span>
+                            <div>
+                                <h5 class="mb-0">Seasonal Repotting</h5>
+                                <p class="small text-white-50 mb-0">When to give your plant a new home.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 order-1 order-md-2">
+                <span class="text-success text-uppercase small fw-bold" style="letter-spacing: 2px;">Our Mission</span>
+                <h2 class="display-5 fw-bold mt-2 mb-4">Ethics & Nature <br>Hand in Hand</h2>
+                <p class="lead text-muted">We don't just sell plants; we cultivate connections with nature. Our mission is to provide ethically sourced, sustainable greenery that transforms houses into homes.</p>
+                <div class="d-flex gap-4 mt-4">
+                    <div class="text-center">
+                        <h4 class="fw-bold mb-0">15k+</h4>
+                        <p class="small text-muted">Homes Greened</p>
+                    </div>
+                    <div class="text-center border-start ps-4">
+                        <h4 class="fw-bold mb-0">98%</h4>
+                        <p class="small text-muted">Sustainability Rate</p>
+                    </div>
+                </div>
+                <a href="about.html" class="btn btn-outline-success rounded-pill px-4 mt-4 mt-lg-5">Discover Our Story</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container overflow-hidden">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Blooming Oasis</h5>
+                    <p class="small text-secondary">Bringing nature indoors since 2024. Your local partner in all things green.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-secondary text-decoration-none">Home</a></li>
+                        <li><a href="product.html" class="text-secondary text-decoration-none">Products</a></li>
+                        <li><a href="about.html" class="text-secondary text-decoration-none">About Us</a></li>
+                        <li><a href="contact.html" class="text-secondary text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Stay Connected</h5>
+                    <p class="small text-secondary" id="current-date-time"></p>
+                </div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <p class="text-center small text-secondary">&copy; 2024 Blooming Oasis. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
